@@ -1,21 +1,38 @@
 
 
+from Stack import Stack
+import re
 
 expr = input("Please enter an expression to calculate:")
 
-print(expr.split())
+expr1 = re.split('([0-9]+)|\s', expr)
+
+while "" in expr1 or None in expr1:
+	if "" in expr1:
+		expr1.remove("")
+	elif None in expr1:
+		expr1.remove(None)
+	 
+
+print(expr1)
 
 
-def calc(expr, i):
+
+
+def calc(expr, i, space):
+	operand = Stack()
+	operators = Stack()
 	while True:
-		pass
-		break
-		#if (expr[i].):
+		if (expr[i].isalpha()):
+			operand.push(expr[i])
 					
 
+if " " in list(expr):
+	x = calc(expr, i, True)
 
-
-#x = calc(expr, i)
+	print(expr.split())
+else:
+	x = calc(expr, i, False)
 
 
 
