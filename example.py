@@ -18,21 +18,26 @@ print(expr1)
 
 
 
-
-def calc(expr, i, space):
+def calc(exp, i):
 	operand = Stack()
-	operators = Stack()
+	operator = Stack()
 	while True:
-		if (expr[i].isalpha()):
-			operand.push(expr[i])
-					
+		print(exp[i], " ", i)
+		if (exp[i].isdigit()):
+			operand.push(exp[i])
+			i =i+ 1
+		elif(exp[i] == "/" or exp[i] == "*" or exp[i] == "+" or exp[i] == "-" ):
+			
+			if operator.isEmpty():
+				operator.push(exp[i])
+				i=i+1
+	
 
-if " " in list(expr):
-	x = calc(expr, i, True)
+	
 
-	print(expr.split())
-else:
-	x = calc(expr, i, False)
+				
+
+ans = calc(expr1, 0)
 
 
 
